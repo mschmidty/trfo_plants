@@ -1,0 +1,19 @@
+$black: #222222;
+$primary-color: #00AA83;
+$link: #0D8DFA;
+$light-grey: #BCBCBC;
+$grey: #616161;
+$dark-grey: #454545;
+$white: #ffffff;
+$off-white: #efefef;
+$link-highlight: #8300AA;
+
+.link {
+  color: $link;
+}
+a.link-highlight , a.link-highlight:visited {
+  color: $primary-color;
+}
+a.link-highlight.button {
+  border: 1px solid $link-highlight;
+}

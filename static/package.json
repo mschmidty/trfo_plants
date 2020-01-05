@@ -1,0 +1,25 @@
+{
+  "name": "trfo_plants",
+  "version": "1.0.0",
+  "description": "",
+  "main": "NA",
+  "scripts": {
+    "test": "NA"
+  },
+  "repository": {
+    "type": "git",
+    "url": "NA"
+  },
+  "keywords": [
+    "NA"
+  ],
+  "author": "Mike Schmidt",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0"
+  }
+}

@@ -1,0 +1,27 @@
+//--------------
+//Buttons and Links
+//--------------
+
+.link-button{
+  display:block;
+  font-style:normal;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.button, button, input[type="submit"] {
+  border: 1px solid $link;
+  padding: 0.5rem 2rem;
+  border-radius:3px;
+  background:none;
+  color: $link;
+}
+//---------------
+//Boxes and Cards
+//--------------
+.card {
+  padding:4rem;
+  width: 700px;
+  max-width: 95%;
+  margin: 0 auto;
+  border-radius: 3px;
+}

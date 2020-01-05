@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block content%}
+<div class="flex-parent ">
+  <div class="card">
+    <h2>Login</h2>
+    <form  method="POST" class="form"> {% csrf_token %}
+      {{form.as_p}}
+      <button type="submit" name="button">Log In</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

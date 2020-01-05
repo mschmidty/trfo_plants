@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+<meta charset="utf-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1">
+<title>TRFO Plants Database | A digital herbarium. </title>
+<link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
+
+</head>
+<body>
+<div class="wrapper">
+  <header class="site-header">
+    <img src="{% static 'svg/TRFO_Plant_Logo.svg'%}" class = "logo" alt="Logo">
+    <nav class="header-nav">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'plants:family-index' %}">Browse Plants</a></li>
+        <li><a href="#">About</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'plants:create' %}" class="link-highlight">Enter A New Plant</a></li>
+        {% endif%}
+      </ul>
+    </nav>
+    <div class="header-user-info">
+      {% if user.is_authenticated %}
+        <p class="header-username">{{user.username}}</p>
+      {% endif%}
+
+      {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="button header-login">Log Out</a>
+      {% else %}
+        <a href="{% url 'login' %}" class="button header-login">Log In</a>
+      {% endif %}
+    </div>
+
+  </header>
+  {% if messages %}
+      {% for message in messages %}
+          <div class="warning-message">
+                  {{ message }}
+          </div>
+
+      {% endfor %}
+  {% endif %}
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+</div> <!--.wraper-->
+</body>
+</html>

@@ -1,0 +1,21 @@
+.form, form{
+  label{
+    width: 100%;
+    display:block;
+    font-size: 1.4rem;
+    color: $dark-grey;
+  }
+  input[type="text"], textarea{
+    margin-bottom: 1.5rem;
+    border-radius: 3px;
+    border: 1px solid $grey;
+    min-width: 400px;
+  }
+  input, select{
+    margin-bottom: 1.5rem;
+  }
+  button{
+    margin-top:1rem;
+  }
+}
+//for button styles see small-components.scss

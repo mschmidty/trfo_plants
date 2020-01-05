@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% block content%}
+<h1 class="page-title">Family List</h1>
+<p class="page-tagline">All plants listed by family.</p>
+{% if all_families %}
+<div class="flex-grid lrg-2 content-wrapper">
+  {% for family in all_families %}
+  <div class="family-list flex-grid-item">
+      <h2><a href="{% url 'plants:family-detail' family.id %}">{{ family.family }}</a></h2>
+      <ul>
+        {% for species in family.plant_basics_set.all %}
+          <li><a href="{% url 'plants:detail' species.id %}">{{ species.genus }} {{species.species}}</a></li>
+        {% endfor %}
+      </ul>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+    <p>No plants are available.</p>
+{% endif %}
+{% endblock %}
