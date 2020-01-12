@@ -16,8 +16,7 @@
     <nav class="header-nav">
       <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'plants:family-index' %}">Browse Plants</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="{% url 'plants:index' %}">Browse Plants</a></li>
         {% if user.is_authenticated %}
           <li><a href="{% url 'plants:create' %}" class="link-highlight">Enter A New Plant</a></li>
         {% endif%}

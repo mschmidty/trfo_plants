@@ -4,3 +4,5 @@ settings.py
 node_modules/
 package-lock.json
 .vscode/
+venv/
+media/

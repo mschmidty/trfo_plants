@@ -1,21 +1,38 @@
 {% extends 'base.html'%}
 {% block content%}
-
-<h1>{{ object.genus }} {{object.species}}</h1>
-<ul>
-    <li><span class="bold">Family:</span> {{object.family}}</li>
-    <li><span class="bold">Common Name:</span> {{object.common_name}}</li>
-    <li><span class="bold">Symbol:</span> {{object.symbol}}</li>
-    <li><span class="bold">Description:</span> {{object.description}}</li>
-    {% if object.image %}
-        <img src="{{object.image.url}}" alt="Image of {{object.genus}} {{object.species}}">
-    {% endif %}
-</ul>
-<p>
-  {% if user.is_authenticated %}
-  <a href="{% url 'plants:delete' object.id %} ">Delete Plant</a> |  <a href=" {% url 'plants:index' %}">All Plants</a> | <a href="{% url 'plants:update' object.id %}">Update</a>
+<section class="species_detail_wrapper">
+  {% if object.image %}
+  <div class="species_detail_text_wrapper">
   {% endif %}
-</p>
+  <div class="species_detail_text">
+
+    <h1>{{ object.genus }} {{object.species}}</h1>
+    <ul>
+        <li><span class="bold">Family:</span> {{object.family}}</li>
+        <li><span class="bold">Common Name:</span> {{object.common_name}}</li>
+        <li><span class="bold">Symbol:</span> {{object.symbol}}</li>
+        <li><span class="bold">Description:</span> {{object.description}}</li>
+    </ul>
+    <p>
+      {% if user.is_authenticated %}
+      <a href="{% url 'plants:delete' object.id %} ">Delete Plant</a> |  <a href=" {% url 'plants:index' %}">All Plants</a> | <a href="{% url 'plants:update' object.id %}">Update</a>
+      {% endif %}
+    </p>
+
+  </div>
+  {% if object.image %}
+  </div>
+  {% endif %}
+  {% if object.image %}
+  <div class="species_detail_image">
+      <img src="{{object.image.url}}" alt="Image of {{object.genus}} {{object.species}}">
+  </div>
+  {% endif %}
+
+
+
+</section>
+
 
 
 {% endblock %}

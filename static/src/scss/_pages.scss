@@ -59,3 +59,50 @@
 .common_name{
   text-transform: capitalize;
 }
+
+// Plants detail.html --------------------------
+.species_detail_wrapper{
+  display:flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+  position:relative;
+  .species_detail_image{
+    width: 50%;
+    margin-left: 0;
+  }
+  @media all and(max-width:900px){
+    display:block;
+    .species_detail_text, .species_detail_image, .species_detail_text_wrapper {
+      width: 100%;
+      height: auto;
+    }
+    img {
+      object-fit:none;
+    }
+  }
+
+}
+.species_detail_text{
+  padding: 20px;
+  max-height: calc(100vh - 80px);
+  overflow:scroll;
+  margin: 0 auto;
+  li {
+    margin-bottom:5px;
+  }
+}
+.species_detail_image {
+  height: calc(100vh - 80px);
+  img {
+    height: 100%;
+    width: 100%;
+    display:block;
+    object-fit: cover;
+  }
+}
+.species_detail_text_wrapper {
+  display:flex;
+  align-items:center;
+  width: 50%;
+}
