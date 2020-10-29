@@ -5,6 +5,9 @@ package-lock.json
 .vscode/
 venv/
 staticfiles/
-
-__pycache__
-
+media/
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__ 
