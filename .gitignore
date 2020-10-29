@@ -1,9 +1,7 @@
 .DS_Store
-db.sqlite3
 settings.py
 node_modules/
 package-lock.json
 .vscode/
 venv/
-media/
 staticfiles/
