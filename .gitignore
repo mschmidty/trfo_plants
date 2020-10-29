@@ -5,5 +5,7 @@ node_modules/
 package-lock.json
 .vscode/
 venv/
-media/
 staticfiles/
+
+__pycache__
+
