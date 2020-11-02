@@ -65,5 +65,5 @@ class FamilyUpdateView(LoginRequiredMixin, generic.UpdateView):
                 ]
 
 def familyJsonIndex(request):
-    species = plant_basics.objects.order_by('genus').values('genus', 'species','common_name', 'symbol','id', 'family__family')
+    species = plant_basics.objects.order_by('genus').values('genus', 'species','common_name', 'symbol','image','id', 'family__family')
     return JsonResponse({'species': list(species)})
