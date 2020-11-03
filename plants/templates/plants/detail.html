@@ -18,6 +18,24 @@
       <a href="{% url 'plants:delete' object.id %} ">Delete Plant</a> |  <a href=" {% url 'plants:index' %}">All Plants</a> | <a href="{% url 'plants:update' object.id %}">Update</a>
       {% endif %}
     </p>
+    <h3>Additional Images</h3>
+    {% if user.is_authenticated %}
+    <a href="{% url 'plants:plant-images-create' object.id %}">Add Additional Images</a>
+    {% endif %}
+    <ul>
+      {% for plant_images in object.plantimages_set.all %}
+      <li>
+        <img src="{{plant_images.additional_image.url}}" alt="">
+        <p>{{ plant_images.additional_image_description }}</p>
+        <span>
+          <a href="{% url 'plants:plant-images-delete' plant_images.id %}">Delete</a> |
+          <a href="{% url 'plants:plant-images-update' plant_images.id%}">Update</a>
+        </span>
+      </li>
+      {% empty %}
+      <li>There are no additional images for this species.</li>
+      {% endfor%}
+    </ul>
 
   </div>
   {% if object.image %}

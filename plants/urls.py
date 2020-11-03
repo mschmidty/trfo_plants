@@ -15,4 +15,7 @@ urlpatterns = [
     path('family/<int:pk>/update/', views.FamilyUpdateView.as_view(), name = "family-update"),
     path('family/<int:pk>/delete/', views.FamilyDeleteView.as_view(), name = "family-delete"),
     path('family_api/', views.familyJsonIndex, name = "family_api"),
+    path('<int:pk>/plant-images/new/', views.PlantImagesCreateView.as_view(), name = "plant-images-create"),
+    path('plant-images/<int:pk>/update/', views.PlantImagesUpdateView.as_view(), name = "plant-images-update"),
+    path('plant-images/<int:pk>/delete/', views.PlantImagesDeleteView.as_view(), name = "plant-images-delete"),
 ]

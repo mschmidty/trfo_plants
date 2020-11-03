@@ -4,7 +4,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .models import plant_basics, Family
+from .models import plant_basics, Family, PlantImages
 
 # Create your views here.
 
@@ -21,6 +21,7 @@ class PlantCreateView(LoginRequiredMixin, generic.CreateView):
     model = plant_basics
     fields =   ['genus',
                 'species',
+                'symbol',
                 'description',
                 'image',
                 'family'
@@ -33,6 +34,7 @@ class PlantUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = plant_basics
     fields = [  'genus',
                 'species',
+                'symbol',
                 'description',
                 'image',
                 'family'
@@ -67,3 +69,27 @@ class FamilyUpdateView(LoginRequiredMixin, generic.UpdateView):
 def familyJsonIndex(request):
     species = plant_basics.objects.order_by('genus').values('genus', 'species','common_name', 'symbol','image','id', 'family__family')
     return JsonResponse({'species': list(species)})
+
+## Additional Images Views
+
+class PlantImagesCreateView(LoginRequiredMixin, generic.CreateView):
+    model = PlantImages
+    fields =   [
+      'additional_image',
+      'additional_image_description'
+      ]
+
+    def form_valid(self, form):
+        form.instance.plant_basics = plant_basics.objects.get(id=self.kwargs.get('pk'))
+        return super().form_valid(form)
+
+class PlantImagesDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = PlantImages
+    success_url = reverse_lazy('plants:index')
+
+class PlantImagesUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = PlantImages
+    fields =   [
+      'additional_image',
+      'additional_image_description'
+      ]

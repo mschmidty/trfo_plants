@@ -32,4 +32,8 @@ class plant_basics(models.Model):
 
 class PlantImages(models.Model):
   additional_image = models.ImageField(upload_to='images/', blank = True, null = True)
-  plant = models.ForeignKey(plant_basics, on_delete = models.PROTECT, null = True)
+  additional_image_description = models.TextField(null=True)
+  plant_basics = models.ForeignKey(plant_basics, on_delete = models.PROTECT, blank=True, null=True)
+
+  def get_absolute_url(self):
+        return reverse('plants:detail', kwargs={'pk':self.plant_basics_id})
