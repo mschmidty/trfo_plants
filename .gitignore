@@ -11,5 +11,9 @@ media/
 *.log
 *.pot
 *.pyc
+<<<<<<< HEAD
 __pycache__
 __pycache__/
+=======
+__pycache__ 
+>>>>>>> 8a3cdc930ca703933a9a4e4e8c3d8808f77516b9
