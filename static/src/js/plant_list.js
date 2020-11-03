@@ -1,7 +1,7 @@
 let markup;
 async function getPlants(query){
   //let url = '{% url "plants:family_api" %}'
-  let url = '/plants/famili_api'
+  let url = '/plants/family_api'
   const response = await fetch(url)
   const jsonData = await response.json()
   let species = await jsonData.species
@@ -11,11 +11,13 @@ async function getPlants(query){
         groups[line.family__family] = groups[line.family__family] || []
         groups[line.family__family].push({
           sci_name: line.genus + " " + line.species,
-          id: line.id
+          id: line.id,
+          image: line.image
         })
       //}
       return groups
     }, {})
+    console.log(groupedData)
     function sortByKey(jsObj){
         var sortedArray = [];
 

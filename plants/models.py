@@ -20,8 +20,9 @@ class plant_basics(models.Model):
     common_name = models.CharField(max_length = 100, null = True)
     description = models.TextField(null = True)
     image = models.ImageField(upload_to='images/', blank = True, null = True)
+    frequency = models.IntegerField(null=True, blank = True)
     family = models.ForeignKey(Family, on_delete = models.PROTECT, null = True)
-
+    
     def __str__(self):
         sci_name = "%s %s" %(str(self.genus), str(self.species))
         return(sci_name)
@@ -29,4 +30,6 @@ class plant_basics(models.Model):
     def get_absolute_url(self):
         return reverse('plants:detail', kwargs={'pk':self.pk})
 
-
+class PlantImages(models.Model):
+  additional_image = models.ImageField(upload_to='images/', blank = True, null = True)
+  plant = models.ForeignKey(plant_basics, on_delete = models.PROTECT, null = True)
