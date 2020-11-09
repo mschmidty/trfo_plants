@@ -17,10 +17,12 @@
 	</svg>
 
   </div>
-  <div class = "content-wrapper">
-    <h1>Welcome to the plants database</h1>
+  <div class = "content-wrapper" id="browse-plants">
+    <h1 id="browse-plants">Welcome to the plants database</h1>
     <p>This is a database that houses all of the plant found and identified on the BLM Tres Rios Field Office. Take a look around all of our plants. Do you want a similar database for your organization or have questions?  Contact mike@schmidtyworks.com.</p>
-    <p><span class="bold">Sort by:</span> <a href="#" class = "sort-select" value="genus">Genus</a> | <a href="#" class = "sort-select" value = "family">Family</a> | <a href="#" class = "sort-select" value = "commonName">Common Name</a> | <a href="#" class="sort-select" value="symbol">Symbol</a></p>
+    <!--<p><span class="bold">Sort by:</span> <a href="#" class = "sort-select" value="genus">Genus</a> | <a href="#" class = "sort-select" value = "family">Family</a> | <a href="#" class = "sort-select" value = "commonName">Common Name</a> | <a href="#" class="sort-select" value="symbol">Symbol</a></p>-->
+    <input type="search" name="search" class="search" placeholder="Enter A Plant Name">
+    <p class="sub-heading">Enter a plant genus, species or family to rilter the list</p>
     <div id="plants-list">
 
     </div>

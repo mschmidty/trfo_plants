@@ -1,7 +1,7 @@
 //General Layout
 .content {
   min-height: calc(100vh - 82px);
-  h1, h2, h3, h4, p, ul, ol, li, a, form{
+  h1, h2, h3, h4, p, ul, ol, a, form{
     max-width: 800px;
     width: 100%;
     margin-left: auto;
@@ -9,8 +9,10 @@
   }
 }
 .content-wrapper {
+  width: 90%;
   max-width: 900px;
   margin: 3rem auto 1rem auto;
+  position:relative;
 }
 
 .page-tagline{
@@ -19,7 +21,7 @@
 }
 
 //Flex Layouts -------------------------------------
-$flex-margin: 20px;
+$flex-margin: 30px;
 $screen-small:500px;
 $screen-medium:700px;
 $screen-large:950px;
@@ -27,14 +29,13 @@ $screen-xlarge:1200px;
 .flex-grid{
   display:flex;
   flex-wrap:wrap;
-  padding:$flex-margin;
+  justify-content: flex-start;
+  flex-direction: row;
 }
 
 .flex-grid-item {
   margin-right:$flex-margin;
   margin-bottom:$flex-margin;
-  padding:20px; //Remove for your Grid
-
 }
 
 .lrg-2 {
@@ -53,6 +54,9 @@ $screen-xlarge:1200px;
 .lrg-3 {
   .flex-grid-item{
     flex:0 1 calc(33.33% - #{$flex-margin}*0.6663);
+    &:first-of-type{
+      margin-left:0;
+    }
     &:nth-of-type(3n){
       margin-right:0;
     }

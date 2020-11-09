@@ -93,3 +93,6 @@ class PlantImagesUpdateView(LoginRequiredMixin, generic.UpdateView):
       'additional_image',
       'additional_image_description'
       ]
+#Random View for testing
+def testView(request):
+    return render(request, 'plants/test_page.html')

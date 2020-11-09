@@ -59,6 +59,58 @@
 .common_name{
   text-transform: capitalize;
 }
+.species-card{
+  background: #efefef;
+  border-radius: 7px;
+  overflow:hidden;
+  box-shadow: 15px 15px 30px #b0b0b0, 
+              -15px -15px 30px #ffffff;
+  h3, p, a{
+    color: $black;
+  }
+  a:hover{
+    text-decoration:none;
+  }
+}
+.family-list{
+  h2{
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+  ul.flex-grid{
+    padding:0px;
+  }
+}
+.image-wrapper{
+  display:block;
+  width: 100%;
+  height: 200px;
+  overflow:hidden;
+  position:relative;
+  img{
+    object-fit:cover;
+    min-width: 100%;
+    min-height: 200px;
+  }
+}
+.text-wrapper{
+  max-width:90%;
+  margin: 1rem auto;
+  position:relative;
+  .extra-info{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    p{
+      color: $light-grey;
+      font-size: 12px;
+    }
+    .symbol{
+      color:$primary-color;
+    }
+  }
+  
+}
 
 // Plants detail.html --------------------------
 .species_detail_wrapper{

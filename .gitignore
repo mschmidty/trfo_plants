@@ -6,6 +6,7 @@ package-lock.json
 .vscode/
 venv/
 staticfiles/
+images/
 # Django #
 *.log
 *.pot
